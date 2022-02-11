@@ -44,7 +44,7 @@
           width: 100%;
           height: 2000px;
         }
-        .container {
+        .container0 {
           width: 100%;
           height: 100%;
           /* border:1px solid red; */
@@ -58,29 +58,45 @@
         }
       }
       @media all and (min-width: 992px) {
+        html,
         body {
-          width: 2000px;
+          /* border: 1px solid red; */
+          width: 100%;
+          height: 100vh;
           /* touch-action: none; */
         }
-        .container {
-          max-width: 100%;
+        .container0 {
           /* border:1px solid red; */
-          width: 100%;
-          height: 170vh;
+          position: relative;
+          box-sizing: border-box;
+          height: 100%;
+          /* border: 1px solid blue; */
+          padding: 0;
+          margin: 0;
         }
         .row {
+          position: relative;
           width: 100%;
           height: 100%;
+          overflow-x: auto;
         }
         .col-lg-3 {
-          width: 25%;
+          position: absolute;
+          width: 40%;
           height: 100%;
         }
-
-        /* #main_1:hover {
-          /* transform: scale(1.5, 1);
-          transition: all 1s; */
-        } */
+        #main_1 {
+          left: 0%;
+        }
+        #main_2 {
+          left: 40%;
+        }
+        #main_3 {
+          left: 80%;
+        }
+        #main_4 {
+          left: 120%;
+        }
       }
     </style>
     <script>
@@ -89,13 +105,14 @@
     </script>
   </head>
   <body>
-    <div class="container">
+    <div class="container0">
+     
       <div class="row">
         <div class="col col-12 col-lg-3" id="main_1">Column1</div>
         <div class="col col-12 col-lg-3" id="main_2">Column2</div>
         <div class="col col-12 col-lg-3" id="main_3">Column3</div>
         <div class="col col-12 col-lg-3" id="main_4">Column4</div>
       </div>
-    </div>
+    
   </body>
 </html>
