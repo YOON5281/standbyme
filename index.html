@@ -27,16 +27,16 @@
       }
 
       #main_1 {
-        background-color: brown;
+        background-color: transparent;
       }
       #main_2 {
-        background-color: blue;
+        background-color: transparent;
       }
       #main_3 {
-        background-color: green;
+        background-color: transparent;
       }
       #main_4 {
-        background-color: gray;
+        background-color: transparent;
       }
 
       @media all and (max-width: 991px) {
@@ -55,8 +55,13 @@
         }
         .col-12 {
           height: 25%;
+          overflow:hidden;
+        }
+        .video-box{
+         position:relative; top:-48%; 
         }
       }
+    
       @media all and (min-width: 992px) {
         html,
         body {
@@ -82,20 +87,30 @@
         }
         .col-lg-3 {
           position: absolute;
-          width: 40%;
+          width: 60%;
           height: 100%;
+          overflow:hidden;
+        }
+
+        .video-box{
+          height:100%;
+          margin-top:-25%;
+          margin-right:10%;  
+        }
+        .iframe-video{
+          width:1400px;
         }
         #main_1 {
           left: 0%;
         }
         #main_2 {
-          left: 40%;
+          left: 60%;
         }
         #main_3 {
-          left: 80%;
+          left: 120%;
         }
         #main_4 {
-          left: 120%;
+          left: 180%;
         }
       }
     </style>
@@ -108,10 +123,25 @@
     <div class="container0">
      
       <div class="row">
-        <div class="col col-12 col-lg-3" id="main_1">Column1</div>
-        <div class="col col-12 col-lg-3" id="main_2">Column2</div>
-        <div class="col col-12 col-lg-3" id="main_3">Column3</div>
-        <div class="col col-12 col-lg-3" id="main_4">Column4</div>
+        <div class="col col-12 col-lg-3" id="main_1">
+          <div class="video-box">
+          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116571?h=b1c67e6e40&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1000" height="1000" frameborder="0"allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Bike - 72566"></iframe>
+        </div>
+        </div>
+        <div class="col col-12 col-lg-3" id="main_2">
+          <div class="video-box">
+          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116618?h=319339bdb3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1000" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Road - 84970"></iframe>
+        </div>
+        </div>
+        <div class="col col-12 col-lg-3" id="main_3">
+          <div class="video-box">
+          <iframe class="iframe-video"src="https://player.vimeo.com/video/676116595?h=f1f76b78b0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1000" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Ocean - 62249"></iframe></div>
+        </div>
+        <div class="col col-12 col-lg-3" id="main_4">
+          <div class="video-box">
+          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116645?h=2d051e8509&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1778" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Water Lilies - 75008"></iframe>
+        </div>
+      </div>
       </div>
     
   </body>
