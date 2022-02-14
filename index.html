@@ -165,20 +165,33 @@
            $(window).scroll(function () {
         const height = $(window).scrollTop();
         console.log(height);
-        if(height > 10){
-            player_1.play();
+        if(height > 10 && height < 249){
+          player_1.play().then(_ => {
+            player_2.pause();
+            player_3.pause();
+            player_4.pause();
+          });
           }
-        if(height>250){
-          
-            player_2.play();
+        if(height>250 && height < 599){
+          player_2.play().then(_ => {
+            player_1.pause();
+            player_3.pause();
+            player_4.pause();
+          });
           }
-        if(height>600){
-         
-            player_3.play();
+        if(height>600 && height < 899){
+          player_3.play().then(_ => {
+            player_1.pause();
+            player_2.pause();
+            player_4.pause();
+          });
           }
-        if(height>950){
-        
-            player_4.play();
+        if(height>900){
+          player_4.play().then(_ => {
+            player_1.pause();
+            player_2.pause();
+            player_3.pause();
+          });
           }
 
            }
