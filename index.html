@@ -20,6 +20,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <style>
       * {
         margin: 0;
@@ -68,6 +69,7 @@
           /* border: 1px solid red; */
           width: 100%;
           height: 100vh;
+          
           /* touch-action: none; */
         }
         .container0 {
@@ -75,16 +77,22 @@
           position: relative;
           box-sizing: border-box;
           height: 100%;
-          /* border: 1px solid blue; */
           padding: 0;
           margin: 0;
+          
         }
-        .row {
+        #wrap_box {
           position: relative;
           width: 100%;
-          height: 100%;
-          overflow-x: auto;
+          height: 760px;
+          border: 1px solid red;
+          overflow: scroll;
         }
+/* 
+        #wrap_box ::-webkit-scrollbar{
+          height:100px;
+          background-color: black;
+        } */
         .col-lg-3 {
           position: absolute;
           width: 60%;
@@ -114,35 +122,94 @@
         }
       }
     </style>
-    <script>
-      let h = $(window).innerHeight();
-      console.log(h);
-    </script>
+   
   </head>
   <body>
     <div class="container0">
      
-      <div class="row">
+      <div class="row" id="wrap_box">
+        
         <div class="col col-12 col-lg-3" id="main_1">
-          <div class="video-box">
-          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116571?h=b1c67e6e40&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1000" height="1000" frameborder="0"allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Bike - 72566"></iframe>
-        </div>
+          <div class="video-box">           
+            <iframe class="iframe-video" src="https://player.vimeo.com/video/676116571?loop=1&muted=1&autopause=0" width="1000" height="1000" frameborder="0"allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Bike - 72566"></iframe>        
+          </div>
         </div>
         <div class="col col-12 col-lg-3" id="main_2">
           <div class="video-box">
-          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116618?h=319339bdb3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1000" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Road - 84970"></iframe>
+          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116618?loop=1&muted=1&autopause=0" width="1000" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Road - 84970"></iframe>
         </div>
         </div>
         <div class="col col-12 col-lg-3" id="main_3">
           <div class="video-box">
-          <iframe class="iframe-video"src="https://player.vimeo.com/video/676116595?h=f1f76b78b0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1000" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Ocean - 62249"></iframe></div>
+          <iframe class="iframe-video"src="https://player.vimeo.com/video/676116595?loop=1&muted=1&autopause=0" width="1000" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Ocean - 62249"></iframe></div>
         </div>
         <div class="col col-12 col-lg-3" id="main_4">
           <div class="video-box">
-          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116645?h=2d051e8509&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1778" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Water Lilies - 75008"></iframe>
+          <iframe class="iframe-video" src="https://player.vimeo.com/video/676116645?loop=1&muted=1&autopause=0" width="1000" height="1000" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Water Lilies - 75008"></iframe>
         </div>
       </div>
       </div>
-    
+      <script>
+        const iframe_1 = document.querySelectorAll('.iframe-video')[0];
+          var player_1 = new Vimeo.Player(iframe_1);
+
+        const iframe_2 = document.querySelectorAll('.iframe-video')[1];
+        var player_2 = new Vimeo.Player(iframe_2);
+        
+        const iframe_3 = document.querySelectorAll('.iframe-video')[2];
+        var player_3 = new Vimeo.Player(iframe_3); 
+
+        const iframe_4 = document.querySelectorAll('.iframe-video')[3];
+        var player_4 = new Vimeo.Player(iframe_4); 
+     
+           $(window).scroll(function () {
+        const height = $(window).scrollTop();
+        console.log(height);
+        if(height > 10){
+            player_1.play();
+          }
+        if(height>250){
+          
+            player_2.play();
+          }
+        if(height>600){
+         
+            player_3.play();
+          }
+        if(height>950){
+        
+            player_4.play();
+          }
+
+           }
+           );
+      
+      
+          //  window.addEventListener("scroll",function(){
+          //   const height = window.scrollY;
+          //   console.log(height);
+          //  })
+      
+      
+      
+           const nana = document.getElementById('wrap_box');
+      
+           function widthcheck() {
+            const width =  nana.scrollLeft;
+            console.log(width);
+           }
+      
+          nana.addEventListener("scroll", widthcheck);
+
+
+          // $('#wrap_box').scroll(function(){
+          //   const width =  this.scrollLeft;
+          //   console.log(width);
+          // });
+      
+          
+      
+           
+          </script>
   </body>
 </html>
