@@ -166,27 +166,27 @@
         const height = $(window).scrollTop();
         console.log(height);
         if(height > 10 && height < 249){
-          player_1.play().then(_ => {
+          player_1.play().then(_ => { 
             player_2.pause();
             player_3.pause();
             player_4.pause();
           });
           }
-        if(height>250 && height < 599){
+        else if(height>250 && height < 599){
           player_2.play().then(_ => {
             player_1.pause();
             player_3.pause();
             player_4.pause();
           });
           }
-        if(height>600 && height < 899){
+        else if(height>600 && height < 899){
           player_3.play().then(_ => {
             player_1.pause();
             player_2.pause();
             player_4.pause();
           });
           }
-        if(height>900){
+        else if(height>900){
           player_4.play().then(_ => {
             player_1.pause();
             player_2.pause();
@@ -205,21 +205,49 @@
       
       
       
-           const nana = document.getElementById('wrap_box');
+           const wrapbox = document.getElementById('wrap_box');
       
            function widthcheck() {
-            const width =  nana.scrollLeft;
+            const width =  wrapbox.scrollLeft;
             console.log(width);
+
+          if(width > 10 && width < 299){
+          player_1.play().then(_ => { 
+            player_2.pause();
+            player_3.pause();
+            player_4.pause();
+          });
+          }
+        else if(width>300 && width < 699){
+          player_2.play().then(_ => {
+            player_1.pause();
+            player_3.pause();
+            player_4.pause();
+          });
+          }
+        else if(width>700 && width < 1199){
+          player_3.play().then(_ => {
+            player_1.pause();
+            player_2.pause();
+            player_4.pause();
+          });
+          }
+        else if(width>1200){
+          player_4.play().then(_ => {
+            player_1.pause();
+            player_2.pause();
+            player_3.pause();
+          });
+          }
            }
       
-          nana.addEventListener("scroll", widthcheck);
+          wrapbox.addEventListener("scroll", widthcheck);
 
 
           // $('#wrap_box').scroll(function(){
           //   const width =  this.scrollLeft;
           //   console.log(width);
           // });
-      
           
       
            
